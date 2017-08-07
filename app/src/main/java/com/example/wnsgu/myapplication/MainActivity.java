@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId())
         {
-
+/*롤 재미따*/
             case R.id.facebook:
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
