@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.education_click);
         // Add code to print out the key hash
         try {
             PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId())
         {
-/*롤 재미따*/
+
             case R.id.facebook:
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
