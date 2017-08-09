@@ -45,7 +45,7 @@ public class LoginActivity  extends Activity {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         Toast.makeText(getApplicationContext(), "페이스북 로그인 성공", Toast.LENGTH_LONG).show();
-                        setContentView(R.layout.education_click);
+                        setContentView(R.layout.test);
                         // App code
                     }
 
@@ -92,6 +92,7 @@ public class LoginActivity  extends Activity {
             if(exception != null) {
                 Logger.e(exception);
             }
+            Toast.makeText(getApplicationContext(), "세션 연결 실패", Toast.LENGTH_LONG).show();
             setContentView(R.layout.activity_login); // 세션 연결이 실패했을때
         }                                            // 로그인화면을 다시 불러옴
     }

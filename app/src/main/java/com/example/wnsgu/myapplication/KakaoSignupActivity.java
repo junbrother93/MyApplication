@@ -41,29 +41,33 @@ public class KakaoSignupActivity extends Activity{
             public void onFailure(ErrorResult errorResult) {
                 String message = "failed to get user info. msg=" + errorResult;
                 Logger.d(message);
-                Toast.makeText(getApplicationContext(), "카카오톡 로그인 실패", Toast.LENGTH_LONG).show();
 
                 ErrorCode result = ErrorCode.valueOf(errorResult.getErrorCode());
                 if (result == ErrorCode.CLIENT_ERROR_CODE) {
                     finish();
+                    Toast.makeText(getApplicationContext(), "카카오톡 로그인 실패", Toast.LENGTH_LONG).show();
                 } else {
+                    Toast.makeText(getApplicationContext(), "카카오톡 로그인 실패", Toast.LENGTH_LONG).show();
                     redirectLoginActivity();
                 }
             }
 
             @Override
             public void onSessionClosed(ErrorResult errorResult) {
+                Toast.makeText(getApplicationContext(), "카카오톡 세션 닫힘", Toast.LENGTH_LONG).show();
                 redirectLoginActivity();
             }
 
             @Override
-            public void onNotSignedUp() {} // 카카오톡 회원이 아닐 시 showSignup(); 호출해야함
+            public void onNotSignedUp() {
+                Toast.makeText(getApplicationContext(), "카카오톡 회원이 아님", Toast.LENGTH_LONG).show();
+            } // 카카오톡 회원이 아닐 시 showSignup(); 호출해야함
 
             @Override
             public void onSuccess(UserProfile userProfile) {  //성공 시 userProfile 형태로 반환
                 Logger.d("UserProfile : " + userProfile);
                 Toast.makeText(getApplicationContext(), "카카오톡 로그인 성공", Toast.LENGTH_LONG).show();
-                setContentView(R.layout.education_click);
+                setContentView(R.layout.test);
             }
 
         });
