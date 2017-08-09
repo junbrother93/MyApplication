@@ -62,7 +62,7 @@ public class KakaoSignupActivity extends Activity{
             public void onSuccess(UserProfile userProfile) {  //성공 시 userProfile 형태로 반환
                 Logger.d("UserProfile : " + userProfile);
                 Toast.makeText(getApplicationContext(), "카카오톡 로그인 성공", Toast.LENGTH_LONG).show();
-                redirectMainActivity(); // 로그인 성공시 MainActivity로
+                setContentView(R.layout.education_click);
             }
 
         });

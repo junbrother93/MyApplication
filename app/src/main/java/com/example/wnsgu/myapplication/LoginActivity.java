@@ -45,7 +45,7 @@ public class LoginActivity  extends Activity {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         Toast.makeText(getApplicationContext(), "페이스북 로그인 성공", Toast.LENGTH_LONG).show();
-
+                        setContentView(R.layout.education_click);
                         // App code
                     }
 
