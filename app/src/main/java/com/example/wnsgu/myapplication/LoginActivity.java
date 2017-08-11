@@ -32,20 +32,25 @@ public class LoginActivity  extends Activity {
 
     private SessionCallback callback;      //콜백 선언
     CallbackManager callbackManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        final Intent Image = new Intent(this, ImageClick.class);
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
         callbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
+
                     @Override
                     public void onSuccess(LoginResult loginResult) {
+
                         Toast.makeText(getApplicationContext(), "페이스북 로그인 성공", Toast.LENGTH_LONG).show();
-                        setContentView(R.layout.test);
+                        startActivity(Image);
+
+
                         // App code
                     }
 
